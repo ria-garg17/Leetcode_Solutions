@@ -1,28 +1,20 @@
 class Solution {
-public: 
-    void recurPer(vector<int> &ds, vector<int> &nums, int freq[], vector<vector<int>> &ans){
-        if(ds.size() == nums.size()) {
-            ans.push_back(ds);
+public:
+    void rec(int idx,vector<int>&nums,vector<vector<int>>&ans){
+        if(idx==nums.size()){
+            ans.push_back(nums);
             return;
         }
-
-        for(int i = 0; i<nums.size(); i++){
-            if(!freq[i]){
-                ds.push_back(nums[i]);
-                freq[i] = 1;
-                recurPer(ds, nums, freq, ans);
-                freq[i] = 0;
-                ds.pop_back();
-            }
+        
+        for(int i=idx;i<nums.size();i++){
+            swap(nums[idx],nums[i]);
+            rec(idx+1,nums,ans);
+            swap(nums[idx],nums[i]);
         }
     }
-
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> ans;
-        vector<int> ds;
-        int freq[nums.size()];
-        for(int i = 0; i<nums.size(); i++) freq[i] = 0;
-        recurPer(ds, nums, freq, ans);
+        vector<vector<int>>ans;
+        rec(0,nums,ans);
         return ans;
     }
 };

@@ -5,7 +5,6 @@ public:
         unordered_set<int> ans;
         unordered_map<int, int> mp;
         for(int x : nums){
-            // if (mp.count(x)==0) mp[x]=1;
             mp[x]++;
             if (mp[x]>n_3) ans.insert(x);
         }

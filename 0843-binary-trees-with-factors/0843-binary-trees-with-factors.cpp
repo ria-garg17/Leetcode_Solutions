@@ -23,26 +23,11 @@ public:
 
                 int in = mp[nums[i] / nums[j]];
 
-                
-                // if(in != j) dp[i] = (dp[i] + (2 * (dp[in] % mod) * (dp[j]  % mod)) % mod) % mod;
                 dp[i] = (dp[i] + ((dp[in] % mod) * (dp[j]  % mod)) % mod) % mod;
             }
-            // cout << dp[i] << endl;
+            
             ans = (ans + dp[i]) % mod;
         }
         return ans;
     }
 };
-// 2 4 5 10
-// 1 2 1 3
-//    4    4
-//  /  \
-//  2  2
-//    10
-//   /  \
-//   2  5
-//    10
-//   /  \
-//  5    2
-
-// 2 3 6 12

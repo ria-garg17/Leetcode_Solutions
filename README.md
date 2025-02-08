@@ -28,4 +28,8 @@ My leetcode solutions
 |  |
 | ------- |
 | [3309-count-prefix-and-suffix-pairs-i](https://github.com/ria-garg17/Leetcode_Solutions/tree/master/3309-count-prefix-and-suffix-pairs-i) |
+## Database
+|  |
+| ------- |
+| [0595-big-countries](https://github.com/ria-garg17/Leetcode_Solutions/tree/master/0595-big-countries) |
 <!---LeetCode Topics End-->
